@@ -1,6 +1,6 @@
 # Robotics Materials
 
-You may use the following Wishlists to purchase everything at once for the robotics project:
+You may use the following Wishlists to purchase everything at once for the robotics project, with the exception of Sunfounder Ultrasonic Rangefinders. Those must be purchased from Amazon.com.
 
 - [Adafruit CODE @ TACC Summer 2016 Robotics Wishlist](http://www.adafruit.com/wishlists/395776)
 - [SparkFun CODE @ TACC Summer 2016 Robotics Wishlist](http://sfe.io/w124757)
