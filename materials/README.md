@@ -17,11 +17,12 @@ If you need to do any serious debugging of your Particle.io Photon, you will als
 
 - [dfu-util](http://dfu-util.sourceforge.net/)
 
-### Hardware
+### Project Hardware
 
-We try to source our materials from [Adafruit](https://www.adafruit.com/) and [SparkFun](https://www.sparkfun.com/). You may use the wishlists provided in each section for direct purchasing, or you may look at individual details if you want to pick and choose which components of each project you will implement.
+We try to source our materials from [Adafruit](https://www.adafruit.com/) and [SparkFun](https://www.sparkfun.com/). You may use the wishlists provided in each section for direct purchasing, or you may look at individual details if you want to pick and choose which components of each project you will implement. The entire curriculum is designed to be modular.
 
 - [Robotics Materials](./ROBOTICS.md)
+- [Wearables Materials](./WEARABLES.md)
 
 ### Other Materials
 
