@@ -1,0 +1,10 @@
+{
+  "event" : "dark",
+  "url" : "https://tacc-ironman-demo.firebaseio.com/.json?auth={{FIREBASE_SECRET}}",
+  "requestType" : "PUT",
+  "json" : {
+    "state" : "dark.jpg"
+  },
+  "mydevices" : true,
+  "noDefaults" : true
+}
