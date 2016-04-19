@@ -1,7 +1,7 @@
-#define FIREBASE_SECRET   String("YOUR_FIREBASE_SECRET_HERE")
+#define FIREBASE_SECRET   String("bNAhZxNPH3pCVUDQnf1zbQXRyaiKIjwzYw2Dit9m")
 #define INPUT_PIN A2
-#define VOLTAGE_LOW_THRESHOLD 200
-#define VOLTAGE_HIGH_THRESHOLD 500
+#define VOLTAGE_LOW_THRESHOLD 1500
+#define VOLTAGE_HIGH_THRESHOLD 1900
 
 bool low = true;
 String authdata = "{ \"FIREBASE_SECRET\" : \"" + FIREBASE_SECRET + "\" }";
@@ -12,14 +12,15 @@ void takeReading() {
   Serial.println(value);
   if (low && value > VOLTAGE_LOW_THRESHOLD) {
     low = false;
-    Particle.publish("lit", authdata);
+    Particle.publish("dark", authdata);
   } else {
     if (!low && value < VOLTAGE_LOW_THRESHOLD) {
       low = true;
-      Particle.publish("dark", authdata);
+      Particle.publish("lit", authdata);
+      delay(1000);
     }
   }
-  delay(1000);
+  delay(10);
 }
 
 void setup() {
