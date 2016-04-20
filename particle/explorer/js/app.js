@@ -1,5 +1,6 @@
 define(['jquery',
         'particle',
+        'particleexchange',
         'particleloginmodal',
         'particledevicedropdown',
         'particlevariablepanel',
@@ -29,10 +30,14 @@ define(['jquery',
           this.particlefunctionpanel = new ParticleFunctionPanel(device_id, this.token);
           this.particlestatuspanel = new ParticleStatusPanel(device_id, this.token);
           this.particlestatuspanel = new ParticlePublishPanel(this.token);
+          this.exchange.getDevice({ deviceId : device_id, auth: this.token});
         }
       },
 
       initialize: function() {
+          $(document).on('particleexchange.getDevice.data', function(event) { console.log(event); });
+          this.exchange = new ParticleExchange();
+
           this.particleloginmodal = new ParticleLoginModal($.proxy(function(access_token) {
             if (access_token) {
               $.bootstrapGrowl("Login successful", {type : 'success'});
