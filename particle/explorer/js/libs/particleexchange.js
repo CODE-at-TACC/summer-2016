@@ -1,7 +1,15 @@
 define('particleexchange',
   ['particle'],
   function(Particle) {
+
+
   ParticleExchange = function() {
+    if (ParticleExchange.instance) {
+      console.log("Singleton!");
+      return ParticleExchange.instance;
+    }
+    ParticleExchange.instance = this;
+
     // Array Remove - By John Resig (MIT Licensed)
     Array.prototype.remove = function(from, to) {
       var rest = this.slice((to || from) + 1 || this.length);
