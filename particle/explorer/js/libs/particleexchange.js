@@ -5,7 +5,6 @@ define('particleexchange',
 
   ParticleExchange = function() {
     if (ParticleExchange.instance) {
-      console.log("Singleton!");
       return ParticleExchange.instance;
     }
     ParticleExchange.instance = this;
@@ -76,7 +75,9 @@ define('particleexchange',
     }
 
     function dispatch(call, params, data, error) {
-      var ev = new CustomEvent("particleexchange." + call + (data) ? ".data" : ".error", { detail : { params : params, data : data, error: error } });
+      var eventname = "particleexchange." + call + (data ? ".data" : ".error");
+      eventname = "blah";
+      var ev = new CustomEvent(eventname, { detail : { params : params, data : data, error: error } });
       document.dispatchEvent(ev);
     }
 
@@ -88,10 +89,12 @@ define('particleexchange',
       var promise = particle[call](params);
       promise.then(
         function(data) {
+          console.log("Call data");
           dispatch(call, params, data, null);
           removeCall(call, params);
         },
         function(error) {
+          console.log("Call error");
           dispatch(call, params, null, data);
           removeCall(call, params);
         }

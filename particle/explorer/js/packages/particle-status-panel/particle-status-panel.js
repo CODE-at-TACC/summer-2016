@@ -1,29 +1,22 @@
 define('particlestatuspanel',
-  ['jquery', 'particle',
-    'text!./html/particle-status-panel.html',
+  ['jquery',
+    'text!./html/particle-status-panel.html','particleexchange',
     'bootstrapgrowl'],
-  function($, Particle, panelHtml) {
+  function($, panelHtml) {
   ParticleStatusPanel = function(device_id, access_token) {
     var token = access_token;
-    var particle = new Particle();
+    var exchange = new ParticleExchange();
     var id = device_id;
     this.$particlestatuspanel = $('.particle-status-panel');
 
-    function probeDevice() {
-      var devicesPr = particle.getDevice({ deviceId: id, auth: token});
-      devicesPr.then(
-        $.proxy(function(data) {
-          this.$particlestatuspanel.find('[particle-status-panel="device_name"]').html(data.body.name);
-          this.$particlestatuspanel.find('[particle-status-panel="device_id"]').val(data.body.id);
-          this.$particlestatuspanel.find('[particle-status-panel="connected"]').html(data.body.connected ? "Online" : "Offline");
-          this.$particlestatuspanel.find('[particle-status-panel="last_heard"]').val(data.body.last_heard);
-          this.$particlestatuspanel.find('[particle-status-panel="status"]').val(data.body.status);
-          this.$particlestatuspanel.find('[particle-status-panel="last_ip"]').val(data.body.last_ip_address);
-        }, this),
-        $.proxy(function(error) {
-
-        }, this)
-      );
+    function probeDevice(event) {
+      var data = event.detail.data;
+      this.$particlestatuspanel.find('[particle-status-panel="device_name"]').html(data.body.name);
+      this.$particlestatuspanel.find('[particle-status-panel="device_id"]').val(data.body.id);
+      this.$particlestatuspanel.find('[particle-status-panel="connected"]').html(data.body.connected ? "Online" : "Offline");
+      this.$particlestatuspanel.find('[particle-status-panel="last_heard"]').val(data.body.last_heard);
+      this.$particlestatuspanel.find('[particle-status-panel="status"]').val(data.body.status);
+      this.$particlestatuspanel.find('[particle-status-panel="last_ip"]').val(data.body.last_ip_address);
     }
 
     function clearPanel() {
@@ -33,9 +26,15 @@ define('particlestatuspanel',
 
     function init() {
       this.$particlestatuspanel.html(panelHtml);
-      probeDevice.apply(this);
+//      probeDevice.apply(this);
+
+      $(document).on('blah', function(event) {
+        console.log("blahblasdlkfjasldfj");
+      });
+      exchange.getDevice({deviceId : id, auth: token});
 
       var ref = this;
+      /*
       particle.getEventStream({ deviceId: id, auth: token }).then(
         function(stream) {
           stream.on('event', function(data) {
@@ -50,6 +49,7 @@ define('particlestatuspanel',
           });
         }
       );
+      */
     }
 
     $('.particle-status-panel').addClass('panel panel-default');
