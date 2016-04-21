@@ -2,6 +2,7 @@ define('particlefunctionpanel',
   ['jquery',
     'text!./html/particle-function-panel.html',
     'text!./html/particle-function-input-group.html',
+    'destroyed',
     'particleexchange',
     'bootstrapgrowl'],
   function($, panelHtml, inputGroupHtml) {
@@ -45,42 +46,48 @@ define('particlefunctionpanel',
       panel.html("");
     }
 
+    function online(event, data) {
+      if (data.params.deviceId === id) {
+        if (data.body.data === "online") {
+          exchange.getDevice({deviceId : id, auth: token});
+        }
+        if (data.body.data === "offline") {
+          clearPanel();
+          that.$particlefunctionpanel.find('[particle-function-panel="status"]').html("Offline");
+        }
+      }
+    }
+
+    function callFunctionSuccess(event, data) {
+      if (data.params.deviceId === id) {
+        $.bootstrapGrowl(data.params.name + " returned " + data.body.return_value, { type : "success"} );
+      }
+    }
+
+    function callFunctionFail(event, data) {
+      if (data.params.deviceId === id) {
+        $.bootstrapGrowl(data.params.name + " was unsuccessful");
+      }
+    }
+
     function init() {
       that.$particlefunctionpanel.html(panelHtml);
-
       $(document).on('particleexchange.getDevice.data', probeDevice);
-      $(document).on('particleexchange.callFunction.data', function(event, data) {
-        if (data.params.deviceId === id) {
-          $.bootstrapGrowl(data.params.name + " returned " + data.body.return_value, { type : "success"} );
-        }
+      $(document).on('particleexchange.callFunction.data', callFunctionSuccess);
+      $(document).on('particleexchange.callFunction.error', callFunctionFail);
+      $(document).on('particleexchange.getEventStream.event', online);
+      that.$particlefunctionpanel.find('.panel-body').on('destroyed', function() {
+        $(document).off('particleexchange.getDevice.data', probeDevice);
+        $(document).off('particleexchange.callFunction.data', callFunctionSuccess);
+        $(document).off('particleexchange.callFunction.error', callFunctionFail);
+        $(document).off('particleexchange.getEventStream.event', online);
       });
-      $(document).on('particleExchange.callFunction.error', function(event, data) {
-        if (data.params.deviceId === id) {
-          $.bootstrapGrowl(data.params.name + " was unsuccessful");
-        }
-      });
-
       exchange.getDevice({deviceId : id, auth: token});
-
-/*
-      particle.getEventStream({ deviceId: id, auth: token }).then(
-        function(stream) {
-          stream.on('event', function(data) {
-            if (data.data === "online") {
-              probeDevice.apply(ref);
-            }
-            if (data.data === "offline") {
-              clearPanel.apply(ref);
-              ref.$particlefunctionpanel.find('[particle-function-panel="status"]').html("Offline");
-            }
-          });
-        }
-      );
-*/
+      exchange.getEventStream({deviceId : id, auth: token});
     }
 
     $('.particle-function-panel').addClass('panel panel-default');
-    init.apply(this);
+    init();
   }
 
   ParticleFunctionPanel.prototype = {

@@ -9,8 +9,6 @@ define('particleexchange',
     }
     ParticleExchange.instance = this;
 
-
-
     var token = null;
     var particle = new Particle();
     var callList = Array();
@@ -88,6 +86,21 @@ define('particleexchange',
         function(error) {
           dispatch(call, params, null, data);
           removeCall(call, params);
+        }
+      )
+    }
+
+    this.getEventStream = function(params) {
+      if (callExists("getEventStream", params)) {
+        return false;
+      }
+      addCall("getEventStream", params);
+      var promise = particle.getEventStream(params);
+      promise.then(
+        function(stream) {
+          stream.on('event', function(data) {
+            $(document).trigger("particleexchange.getEventStream.event", { params : params, body : data, error: null });
+          });
         }
       )
     }

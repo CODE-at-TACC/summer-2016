@@ -13,7 +13,8 @@ require.config({
       text: "libs/text",
       particle: "libs/particle.min",
       bootstrapgrowl : "libs/jquery.bootstrap-growl.min",
-      particleexchange: "libs/particleexchange"
+      particleexchange: "libs/particleexchange",
+      destroyed : "libs/destroyed"
   },
   "shim" : {
       "libs/jquery.bootstrap-growl.min" : ["jquery"]

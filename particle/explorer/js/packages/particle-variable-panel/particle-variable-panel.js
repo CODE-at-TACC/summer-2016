@@ -3,6 +3,7 @@ define('particlevariablepanel',
     'text!./html/particle-variable-panel.html',
     'text!./html/particle-variable-input-group.html',
     'particleexchange',
+    'destroyed',
     'bootstrapgrowl'],
   function($, panelHtml, inputGroupHtml) {
   ParticleVariablePanel = function(device_id, access_token) {
@@ -53,6 +54,18 @@ define('particlevariablepanel',
       }
     }
 
+    function online(event, data) {
+      if (data.params.deviceId === id) {
+        if (data.body.data === "online") {
+          exchange.getDevice({deviceId : id, auth: token});
+        }
+        if (data.body.data === "offline") {
+          clearPanel();
+          that.$particlefunctionpanel.find('[particle-variable-panel="status"]').html("Offline");
+        }
+      }
+    }
+
     function clearPanel() {
       var panel = that.$particlevariablepanel.find('[particle-variable-panel="variable_list"]');
       panel.html("");
@@ -62,7 +75,14 @@ define('particlevariablepanel',
       that.$particlevariablepanel.html(panelHtml);
       $(document).on('particleexchange.getDevice.data', probeDevice);
       $(document).on('particleexchange.getVariable.data', refreshVariable);
+      $(document).on('particleexchange.getEventStream.event', online);
+      that.$particlevariablepanel.find('.panel-body').on('destroyed', function() {
+        $(document).off('particleexchange.getDevice.data', probeDevice);
+        $(document).off('particleexchange.getVariable.data', refreshVariable);
+        $(document).off('particleexchange.getEventStream.event', online);
+      });
       exchange.getDevice({deviceId : id, auth: token});
+      exchange.getEventStream({deviceId : id, auth: token});
     }
 
     $('.particle-variable-panel').addClass('panel panel-default');

@@ -2,6 +2,7 @@ define('particlepublishpanel',
   ['jquery',
     'text!./html/particle-publish-panel.html',
     'particleexchange',
+    'destroyed',
     'bootstrapgrowl'],
   function($, panelHtml, inputGroupHtml) {
   ParticlePublishPanel = function(access_token) {
@@ -11,14 +12,22 @@ define('particlepublishpanel',
 
     that.$particlepublishpanel = $('.particle-publish-panel');
 
+    function publishSuccess(event, data) {
+      $.bootstrapGrowl(data.params.name + " published", { type : "success" });
+    }
+
+    function publishFail(event, data) {
+      $.bootstrapGrowl(data.params.name + " was not published", { type : "warning" });
+    }
+
     function init() {
       that.$particlepublishpanel.html(panelHtml);
       that.$particlepublishpanel.find('[particle-publish-panel="publish"]').click($.proxy(publish, this));
-      $(document).on('particleexchange.publishEvent.data', function(event, data) {
-        $.bootstrapGrowl(data.params.name + " published", { type : "success" });
-      });
-      $(document).on('particleexchange.publishEvent.error', function(event, data) {
-        $.bootstrapGrowl(data.params.name + " was not published", { type : "warning" });
+      $(document).on('particleexchange.publishEvent.data', publishSuccess);
+      $(document).on('particleexchange.publishEvent.error', publishFail);
+      that.$particlepublishpanel.find('.panel-body').on('destroyed', function() {
+        $(document).off('particleexchange.publishEvent.data', publishSuccess);
+        $(document).off('particleexchange.publishEvent.error', publishFail);
       });
     }
 
