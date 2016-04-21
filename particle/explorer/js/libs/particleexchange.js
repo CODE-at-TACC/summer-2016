@@ -101,7 +101,7 @@ define('particleexchange',
     }
 
     this.callFunction = function(params) {
-      callWrap("callFunction");
+      callWrap("callFunction", params);
     }
 
     this.publishEvent = function(params) {
