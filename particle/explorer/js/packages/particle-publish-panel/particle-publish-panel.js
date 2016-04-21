@@ -1,22 +1,39 @@
 define('particlepublishpanel',
-  ['jquery', 'particle',
+  ['jquery',
     'text!./html/particle-publish-panel.html',
+    'particleexchange',
+    'destroyed',
     'bootstrapgrowl'],
-  function($, Particle, panelHtml, inputGroupHtml) {
+  function($, panelHtml, inputGroupHtml) {
   ParticlePublishPanel = function(access_token) {
     var token = access_token;
-    var particle = new Particle();
+    var exchange = new ParticleExchange();
+    var that = this;
 
-    this.$particlepublishpanel = $('.particle-publish-panel');
+    that.$particlepublishpanel = $('.particle-publish-panel');
+
+    function publishSuccess(event, data) {
+      $.bootstrapGrowl(data.params.name + " published", { type : "success" });
+    }
+
+    function publishFail(event, data) {
+      $.bootstrapGrowl(data.params.name + " was not published", { type : "warning" });
+    }
 
     function init() {
-      this.$particlepublishpanel.html(panelHtml);
-      this.$particlepublishpanel.find('[particle-publish-panel="publish"]').click($.proxy(publish, this));
+      that.$particlepublishpanel.html(panelHtml);
+      that.$particlepublishpanel.find('[particle-publish-panel="publish"]').click($.proxy(publish, this));
+      $(document).on('particleexchange.publishEvent.data', publishSuccess);
+      $(document).on('particleexchange.publishEvent.error', publishFail);
+      that.$particlepublishpanel.find('.panel-body').on('destroyed', function() {
+        $(document).off('particleexchange.publishEvent.data', publishSuccess);
+        $(document).off('particleexchange.publishEvent.error', publishFail);
+      });
     }
 
     function publish() {
-      var eventname = this.$particlepublishpanel.find('[particle-publish-panel="event"]').val();
-      var datatext = this.$particlepublishpanel.find('[particle-publish-panel="data"]').val();
+      var eventname = that.$particlepublishpanel.find('[particle-publish-panel="event"]').val();
+      var datatext = that.$particlepublishpanel.find('[particle-publish-panel="data"]').val();
       var data = { };
       var ok = true;
       if (!(eventname && eventname.length > 0)) {
@@ -31,21 +48,12 @@ define('particlepublishpanel',
         }
       }
       if (ok) {
-        var publishEventPr = particle.publishEvent({ name : eventname, data : data, auth: token });
-        publishEventPr.then(
-          $.proxy(function(data) {
-            $.bootstrapGrowl(eventname + " published", {type : "success"});
-            console.log(data);
-          }, this),
-          $.proxy(function(error) {
-            $.bootstrapGrowl(eventname + " was not published", {type : "warning"});
-          }, this)
-        );
+        exchange.publishEvent({ name : eventname, data : data, auth: token });
       }
     }
 
     $('.particle-publish-panel').addClass('panel panel-default');
-    init.apply(this);
+    init();
   }
 
   ParticlePublishPanel.prototype = {

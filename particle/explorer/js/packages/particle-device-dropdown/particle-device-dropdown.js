@@ -34,6 +34,9 @@ define('particledevicedropdown',
             for (key in data.body) {
               var device = data.body[key];
               li = $($(liHtml));
+              if (!device.name || device.name.length == 0) {
+                device.name = "Unnamed Device";
+              }
               li.find('a').text(device.name);
               li.find('a').attr('device_id', device.id);
               li.find('a').click(select_device);

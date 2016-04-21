@@ -1,21 +1,13 @@
 define('particleexchange',
-  ['particle'],
-  function(Particle) {
+  ['jquery', 'particle'],
+  function($, Particle) {
 
 
   ParticleExchange = function() {
     if (ParticleExchange.instance) {
-      console.log("Singleton!");
       return ParticleExchange.instance;
     }
     ParticleExchange.instance = this;
-
-    // Array Remove - By John Resig (MIT Licensed)
-    Array.prototype.remove = function(from, to) {
-      var rest = this.slice((to || from) + 1 || this.length);
-      this.length = from < 0 ? this.length + from : from;
-      return this.push.apply(this, rest);
-    };
 
     var token = null;
     var particle = new Particle();
@@ -28,7 +20,7 @@ define('particleexchange',
                     if (a[attr] != b[attr]) {
                         switch (a[attr].constructor) {
                             case Object:
-                                return equal(a[attr], b[attr]);
+                                return equals(a[attr], b[attr]);
                             case Function:
                                 if (a[attr].toString() != b[attr].toString()) {
                                     return false;
@@ -68,7 +60,7 @@ define('particleexchange',
       json = { call : call, params : params };
       for (key in callList) {
         if (equals(callList[key], json)) {
-          callList.remove(key, key);
+          callList.splice(key, 1);
           return true;
         }
       }
@@ -76,8 +68,8 @@ define('particleexchange',
     }
 
     function dispatch(call, params, data, error) {
-      var ev = new CustomEvent("particleexchange." + call + (data) ? ".data" : ".error", { detail : { params : params, data : data, error: error } });
-      document.dispatchEvent(ev);
+      var eventname = "particleexchange." + call + (data ? ".data" : ".error");
+      $(document).trigger(eventname, { params : params, body : data.body, error: error });
     }
 
     function callWrap(call, params) {
@@ -98,12 +90,31 @@ define('particleexchange',
       )
     }
 
+    this.getEventStream = function(params) {
+      if (callExists("getEventStream", params)) {
+        return false;
+      }
+      addCall("getEventStream", params);
+      var promise = particle.getEventStream(params);
+      promise.then(
+        function(stream) {
+          stream.on('event', function(data) {
+            $(document).trigger("particleexchange.getEventStream.event", { params : params, body : data, error: null });
+          });
+        }
+      )
+    }
+
     this.getDevice = function(params) {
       callWrap("getDevice", params);
     }
 
+    this.getVariable = function(params) {
+      callWrap("getVariable", params);
+    }
+
     this.callFunction = function(params) {
-      callWrap("callFunction");
+      callWrap("callFunction", params);
     }
 
     this.publishEvent = function(params) {
