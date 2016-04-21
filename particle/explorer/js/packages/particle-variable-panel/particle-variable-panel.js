@@ -1,84 +1,72 @@
 define('particlevariablepanel',
-  ['jquery', 'particle',
+  ['jquery',
     'text!./html/particle-variable-panel.html',
     'text!./html/particle-variable-input-group.html',
+    'particleexchange',
     'bootstrapgrowl'],
-  function($, Particle, panelHtml, inputGroupHtml) {
+  function($, panelHtml, inputGroupHtml) {
   ParticleVariablePanel = function(device_id, access_token) {
     var token = access_token;
-    var particle = new Particle();
+    var exchange = new ParticleExchange();
     var id = device_id
-    this.$particlevariablepanel = $('.particle-variable-panel');
+    var that = this;
+    that.$particlevariablepanel = $('.particle-variable-panel');
 
-    function refreshVariable(eventSource) {
+    function requestVariable(eventSource) {
+
       var group = $(eventSource.target).parents('[particle-variable-input-group="group"]');
       var varname = group.find('[particle-variable-input-group="variable"]').html();
       var value = group.find('[particle-variable-input-group="value"]');
-      particle.getVariable({ deviceId: id, name: varname, auth: token}).then(
-        function(data) {
-          value.val(data.body.result);
-        },
-        function(error) {
-          $.bootstrapGrowl("Unable to refresh " + varname, { type : "warning"} );
-        }
-      );
+      exchange.getVariable({ deviceId: id, name: varname, auth: token});
+
     }
 
-    function probeDevice() {
-      clearPanel.apply(this);
-      var devicesPr = particle.getDevice({ deviceId: id, auth: token});
-      devicesPr.then(
-        $.proxy(function(data) {
-          if (data.body.variables) {
-            var panel = this.$particlevariablepanel.find('[particle-variable-panel="variable_list"]');
-            var variables = data.body.variables;
-            var keycount = 0;
-            for (var key in variables) {
-              var inputGroup = $($(inputGroupHtml));
-              inputGroup.find('[particle-variable-input-group="variable"]').html(key);
-              inputGroup.find('[particle-variable-input-group="refresh"]').click(refreshVariable);
-              panel.append(inputGroup);
-              keycount++;
-            }
-            this.$particlevariablepanel.find('[particle-variable-panel="status"]').html(keycount + " variables found");
+    function refreshVariable(event, data) {
+      if (data.params.deviceId === id) {
+        var group = that.$particlevariablepanel.find('[particle-variable-varname="' + data.body.name + '"]');
+        if (group) {
+          $(group).find('[particle-variable-input-group="value"]').val(data.body.result);
+        }
+      }
+    }
 
-          } else {
-            this.$particlevariablepanel.find('[particle-variable-panel="status"]').html("No variables");
+    function probeDevice(event, data) {
+      clearPanel();
+      if (data.params.deviceId === id) {
+        if (data.body.variables) {
+          var panel = that.$particlevariablepanel.find('[particle-variable-panel="variable_list"]');
+          var variables = data.body.variables;
+          var keycount = 0;
+          for (var key in variables) {
+            var inputGroup = $($(inputGroupHtml));
+            inputGroup.attr('particle-variable-varname', key);
+            inputGroup.find('[particle-variable-input-group="variable"]').html(key);
+            inputGroup.find('[particle-variable-input-group="refresh"]').click(requestVariable);
+            panel.append(inputGroup);
+            keycount++;
           }
-        }, this),
-        $.proxy(function(error) {
+          that.$particlevariablepanel.find('[particle-variable-panel="status"]').html(keycount + " variables found");
 
-        }, this)
-      );
+        } else {
+          that.$particlevariablepanel.find('[particle-variable-panel="status"]').html("No variables");
+        }
+      }
     }
 
     function clearPanel() {
-      var panel = this.$particlevariablepanel.find('[particle-variable-panel="variable_list"]');
+      var panel = that.$particlevariablepanel.find('[particle-variable-panel="variable_list"]');
       panel.html("");
     }
 
     function init() {
-      this.$particlevariablepanel.html(panelHtml);
-      probeDevice.apply(this);
-
-      var ref = this;
-      particle.getEventStream({ deviceId: id, auth: token }).then(
-        function(stream) {
-          stream.on('event', function(data) {
-            if (data.data === "online") {
-              probeDevice.apply(ref);
-            }
-            if (data.data === "offline") {
-              clearPanel.apply(ref);
-              ref.$particlevariablepanel.find('[particle-variable-panel="status"]').html("Offline");
-            }
-          });
-        }
-      );
+      that.$particlevariablepanel.html(panelHtml);
+      $(document).on('particleexchange.getDevice.data', probeDevice);
+      $(document).on('particleexchange.getVariable.data', refreshVariable);
+      exchange.getDevice({deviceId : id, auth: token});
     }
 
     $('.particle-variable-panel').addClass('panel panel-default');
-    init.apply(this);
+    init();
   }
 
   ParticleVariablePanel.prototype = {

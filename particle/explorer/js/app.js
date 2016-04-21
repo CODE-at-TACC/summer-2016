@@ -35,9 +35,7 @@ define(['jquery',
 
       initialize: function() {
           this.exchange = new ParticleExchange();
-          $(document).on('blah', function(blah) {
-            console.log("blahblah");
-          });
+
           this.particleloginmodal = new ParticleLoginModal($.proxy(function(access_token) {
             if (access_token) {
               $.bootstrapGrowl("Login successful", {type : 'success'});

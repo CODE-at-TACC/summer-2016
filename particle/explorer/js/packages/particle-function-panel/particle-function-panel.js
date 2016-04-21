@@ -26,6 +26,7 @@ define('particlefunctionpanel',
     }
 
     function probeDevice() {
+
       clearPanel.apply(this);
       var devicesPr = particle.getDevice({ deviceId: id, auth: token});
       devicesPr.then(
@@ -48,6 +49,7 @@ define('particlefunctionpanel',
 
         }, this)
       );
+      
     }
 
     function clearPanel() {

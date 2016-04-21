@@ -1,6 +1,6 @@
 define('particleexchange',
-  ['particle'],
-  function(Particle) {
+  ['jquery', 'particle'],
+  function($, Particle) {
 
 
   ParticleExchange = function() {
@@ -9,12 +9,7 @@ define('particleexchange',
     }
     ParticleExchange.instance = this;
 
-    // Array Remove - By John Resig (MIT Licensed)
-    Array.prototype.remove = function(from, to) {
-      var rest = this.slice((to || from) + 1 || this.length);
-      this.length = from < 0 ? this.length + from : from;
-      return this.push.apply(this, rest);
-    };
+
 
     var token = null;
     var particle = new Particle();
@@ -27,7 +22,7 @@ define('particleexchange',
                     if (a[attr] != b[attr]) {
                         switch (a[attr].constructor) {
                             case Object:
-                                return equal(a[attr], b[attr]);
+                                return equals(a[attr], b[attr]);
                             case Function:
                                 if (a[attr].toString() != b[attr].toString()) {
                                     return false;
@@ -67,7 +62,7 @@ define('particleexchange',
       json = { call : call, params : params };
       for (key in callList) {
         if (equals(callList[key], json)) {
-          callList.remove(key, key);
+          callList.splice(key, 1);
           return true;
         }
       }
@@ -76,9 +71,7 @@ define('particleexchange',
 
     function dispatch(call, params, data, error) {
       var eventname = "particleexchange." + call + (data ? ".data" : ".error");
-      eventname = "blah";
-      var ev = new CustomEvent(eventname, { detail : { params : params, data : data, error: error } });
-      document.dispatchEvent(ev);
+      $(document).trigger(eventname, { params : params, body : data.body, error: error });
     }
 
     function callWrap(call, params) {
@@ -89,12 +82,10 @@ define('particleexchange',
       var promise = particle[call](params);
       promise.then(
         function(data) {
-          console.log("Call data");
           dispatch(call, params, data, null);
           removeCall(call, params);
         },
         function(error) {
-          console.log("Call error");
           dispatch(call, params, null, data);
           removeCall(call, params);
         }
@@ -103,6 +94,10 @@ define('particleexchange',
 
     this.getDevice = function(params) {
       callWrap("getDevice", params);
+    }
+
+    this.getVariable = function(params) {
+      callWrap("getVariable", params);
     }
 
     this.callFunction = function(params) {
