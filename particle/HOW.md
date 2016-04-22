@@ -2,15 +2,11 @@
 
 ### Development Boards
 
-The Particle.io Photon is called a *Development Board*. Development boards are microcontrollers that are designed so that you may connect other electronics using convenient hook-up wire on a breadboard. The *MCU* (Microcontroller Unit) on the Photon can read and write electrical signals to each of its *pins*. You program it with *firmware*.
-
-### Tinker
-
-Photon has an example project called *Tinker*, designed to interact with the Particle.io app on your phone. Watch this video on how to flash *Tinker* to your Photon. ** TODO : Tinker video **
+The Particle.io Photon is called a *Development Board*. Development boards are microcontrollers that are designed so that you may connect other electronics using convenient hook-up wire on a breadboard. Arduino Uno is an example of another development board. The *MCU* (Microcontroller Unit) on the Photon can read and write electrical signals to each of its *pins*. On an Arduino Uno, the MCU is called the ATmega328p. You program an MCU with *firmware*.
 
 ### Nuts and Bolts
 
-TL;DR - this is how your Photon works. This is also how the Cloud works. Read this if you want to know exactly how the Particle.io cloud works, or if you're unfamiliar with the terminology _REST_, _Request Method_, or _Authentication_.
+TL;DR - this is how your Photon works with the Cloud. This is also how the Cloud works. Read this if you want to know exactly how the Particle.io cloud works, or if you're unfamiliar with the terminology _REST_, _Request Method_, or _Authentication_.
 
 _*Cloud Integration*_
 
