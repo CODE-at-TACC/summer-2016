@@ -2,19 +2,16 @@
 
 ### Computers and Software
 
-CODE @ TACC materials are as platform agnostic as possible. We are using:
+CODE @ TACC materials are as platform independent as possible. We are using:
 
-- Laptops with Ubuntu Linux
-- WPA2 WiFi
+- Laptops with Windows
+- WPA2 WiFi Router
 - Unblocked connections to device.spark.io and device.particle.io, TCP port 5683
-
-Some parts of the curriculum will require the Particle Command Line Interface. This will require:
-
-- [Node.js](https://nodejs.org/en/)
-- A good text editor. We recommend [GitHub's Atom](https://atom.io/)
 
 If you need to do any serious debugging of your Particle.io Photon, you will also need:
 
+- [node.js](https://nodejs.org/en/)
+- [Particle CLI](https://docs.particle.io/guide/tools-and-features/cli/photon/)
 - [dfu-util](http://dfu-util.sourceforge.net/)
 
 ### Project Hardware

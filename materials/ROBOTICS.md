@@ -1,6 +1,6 @@
 # Robotics Materials
 
-The CODE @ TACC curriculum doesn't use a pre-made kit for Robotics. None of the kits we found on the market provide Internet connectivity or cloud development. Our chassis is 3D printed, and the schematic is available for download. Alternatively, you can construct your own chassis by purchasing an electronics enclosure and drilling holes for mounting.
+The CODE @ TACC curriculum doesn't use a pre-made kit for Robotics. None of the kits we found on the market provide Internet connectivity or cloud development. Therefore, we've chosen to select components and packages available at [Adafruit](http://www.adafruit.com) and [SparkFun](http://www.sparkfun.com) to construct our "kit".
 
 You may use the following Wishlists to purchase everything at once for the robotics project, with the exception of Sunfounder Ultrasonic Rangefinders. Those must be purchased from Amazon.com.
 
