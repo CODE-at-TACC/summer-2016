@@ -23,4 +23,4 @@ Throughout this curriculum, you will see sections titled _Nuts and Bolts_. These
 1. [Materials](./materials)
 2. [Activities and Lesson Plans](./activities)
 2. [An Introduction to Particle.io](./particle)
-3. 
+3. [Robotics](./robotics)
