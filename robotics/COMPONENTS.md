@@ -4,11 +4,11 @@ Your robot consists of several major components. You can watch the video on them
 
 * TODO: YouTube on components of a robot *
 
-### Chassis
+_*Chassis*_
 
 This is the frame on which the robot is built. It may have moving parts, like the swivel caster at the front of the robot. It is completely mechanical - nothing is powered.
 
-### Drive Train
+_*Drive Train*_
 
 Your robot is driven with two 5 volt motors, bolted to the chassis with wheels. The drive train for a robot is typically considered anything that translates electric energy to mechanical energy. There are many types of _actuators_ that can be used for robots. Common ones are:
 
@@ -17,7 +17,7 @@ Your robot is driven with two 5 volt motors, bolted to the chassis with wheels. 
 - [Pneumatics](https://en.wikipedia.org/wiki/Pneumatics)
 - [Hydraulics](https://en.wikipedia.org/wiki/Hydraulics)
 
-### Drive Control
+_*Drive Control*_
 
 The [motor shield](https://www.adafruit.com/products/1438) on board your robot is part of your drive system, but it handles the electrical side of things. Because of the complexity of actuators in modern robotics, we typically use a separate control system for the actuators. Complex drive control systems, such as those for [quadrotor drones](https://www.youtube.com/watch?v=geqip_0Vjec), may require on-board accelerometers, gyroscopes and [logic systems](https://www.youtube.com/watch?v=UR0hOmjaHp0) to maintain balance. The drive control has three responsibilities:
 
@@ -25,7 +25,7 @@ The [motor shield](https://www.adafruit.com/products/1438) on board your robot i
 - Isolate the power system from the logic system
 - Provide an interface or messaging system for the logic system to control the motors
 
-### Sensors
+_*Sensors*_
 
 A robot may have sensors to collect information about its surroundings. In this course, you will be using:
 
@@ -33,11 +33,11 @@ A robot may have sensors to collect information about its surroundings. In this 
 - Thermopile "heat" sensors
 - Hall Effect "magnetic" sensors
 
-### Logic System
+_*Logic System*_
 
 Your [SparkFun Photon Redboard](https://www.youtube.com/watch?v=RP2ow-N9VD0) board serves as the logic system for your robot. It's the brain. You program it to take in sensor data, make a decision and control the actuators.
 
-### Power System
+_*Power System*_
 
 Most robots, because of their logic systems, have some electrical component. Our robot is battery powered, though there are [larger robots](https://www.youtube.com/watch?v=wE3fmFTtP9g) designed to be combustion powered.
 
@@ -79,6 +79,6 @@ _*Power System*_
 
 In this case, we are using four AA batteries to power the robot. This provides 6 volts of power to the robot, which is within range of our SparkFun Photon Redboard's voltage regulator. The power is shared between the drive system and the logic system. For our robot, which has low power requirements, this is perfectly fine. For larger robots, the systems are typically powered separately communication between the logic system and the drive control happens through relays - devices which mechanically isolate and separate both systems but allow communication between them.
 
-Voltage is the amount of "drive" a device requires to be powered. Therefore, a 6 volt battery pack can provide up to 6 volts of power, on average. When the batteries are fresh, they will provide a little more voltage than 6 volts. When they run low, the voltage drops very quickly from 5.5 volts down to nothing. You know your batteries are running low when the logic board begins "browning out" - randomly resetting with flickering lights.
+Voltage is the amount of potential or "motivation" of electron flow. A 6 volt battery pack can provide up to 6 volts of power, on average. When the batteries are fresh, they will provide a little more voltage than 6 volts. When they run low, the voltage drops very quickly from 5.5 volts down to nothing. You know your batteries are running low when the logic board begins "browning out" - randomly resetting with flickering lights.
 
 Milliamp-Hours (mAh) is a measurement of how much current the batteries can sustain power. If the logic board requires 180 milliamps of power to operate and each motor requires 100 milliamps, then you can expect a battery pack (where each battery provides 2000 mAh) approximately 5 hours of operation. (2000 / (180 + 100 + 100)). Realistically, this will probably be lower. Another thing to consider is that if a battery is rated for 2000 milliamp hours, then typically its "peak current" (or how much of a burst of energy it can put out at once) will be close to 2000 milliamps. Finally - 9v batteries always have low output. Never use those to power a robot or logic board.
