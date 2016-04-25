@@ -14,4 +14,4 @@
 
 - [Assembling Your Robotics Kit](./ASSEMBLY.md)
 - [Components](./COMPONENTS.md)
-
+- [Programming Your Robot](./programming)

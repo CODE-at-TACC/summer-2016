@@ -16,7 +16,7 @@ You may download this curriculum by clicking [this link](https://github.com/CODE
 
 ### Nuts and Bolts
 
-Throughout this curriculum, you will see sections titled _Nuts and Bolts_. These sections provide a detailed explanation of the inner workings of whatever is being discussed in that section. You can read the summary if you are a student, or if you are a teacher who would like to be able to answer deeper questions, you can read the section.
+Throughout this curriculum, you will see sections titled _Nuts and Bolts_. These sections provide a detailed explanation of the inner workings of whatever is being discussed in that section. You can read the summary if you are a student, or if you are a teacher who would like to be able to answer deeper questions, you can read that section.
 
 ### Sections
 
