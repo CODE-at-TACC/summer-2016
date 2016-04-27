@@ -7,6 +7,11 @@ Your robot's logic board is controlled with _firmware_. It's like software, but 
 ### In This Section
 
 - [```loop```](./LOOP.md)
+- [```setup```](./SETUP.md)
+- [Adding new functions](./FUNCTIONS.md)
+- [Variables](./VARIABLES.md)
+- [Exposing Variables and Functions](./EXPOSING.md)
+- [Reading Sensors]
 
 ### Nuts and Bolts
 
