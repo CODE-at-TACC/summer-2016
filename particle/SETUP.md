@@ -48,5 +48,8 @@ You will need to have [```dfu-util```](http://dfu-util.sourceforge.net/) install
 Once that's taken care of, use your terminal to navigate to this folder. One of the subdirectories will be named ```tinker``` and it contains Particle.io's _Tinker_ firmware source code.
 
 - If you are using a Particle.io Photon (used in the Wearables curriculum), compile the firmware using the terminal command ```particle compile photon tinker --saveTo firmware.bin```. If you are using a SparkFun Photon Redboard (used in the robotics curriculum), compile the firmware using the terminal command ```particle compile p1 tinker --saveTo firmware.bin```
-- Connect your Photon via USB and put it in recovery mode by first holding down both the ```SETUP``` and ```RESET``` buttons, then letting go of ```RESET``` and keeping ```SETUP``` held down until the status LED blinks yellow
+- Connect your Photon via USB and put it in recovery mode by first holding down both the ```SETUP``` and ```RESET``` buttons, then letting go of ```RESET``` and keeping ```SETUP``` held down until the status LED blinks yellow. This is DFU (Device Firmware Upgrade) mode.
+  - If this doesn't work and you're using OSX or Linux, you can manually put it in DFU mode. First you'll need to determine the devicename, with the terminal command 
+  ```particle serial monitor```. You'll get a response that looks like ```Opening serial monitor for com port: /dev/cu.usbmodem31"```. Hit ```Ctrl-C``` to exit the serial monitor and type in ```stty -f /dev/cs.usbmodem31 14400```, substituting in your device's specific port name.
+  
 - Flash the firmware with the terminal command ```particle flash --usb firmware.bin```
