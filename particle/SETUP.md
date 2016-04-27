@@ -47,6 +47,6 @@ You will need to have [```dfu-util```](http://dfu-util.sourceforge.net/) install
 
 Once that's taken care of, use your terminal to navigate to this folder. One of the subdirectories will be named ```tinker``` and it contains Particle.io's _Tinker_ firmware source code.
 
-- Compile the firmware using the terminal command ```particle compile photon tinker --saveTo firmware.bin```
+- If you are using a Particle.io Photon (used in the Wearables curriculum), compile the firmware using the terminal command ```particle compile photon tinker --saveTo firmware.bin```. If you are using a SparkFun Photon Redboard (used in the robotics curriculum), compile the firmware using the terminal command ```particle compile p1 tinker --saveTo firmware.bin```
 - Connect your Photon via USB and put it in recovery mode by first holding down both the ```SETUP``` and ```RESET``` buttons, then letting go of ```RESET``` and keeping ```SETUP``` held down until the status LED blinks yellow
 - Flash the firmware with the terminal command ```particle flash --usb firmware.bin```
