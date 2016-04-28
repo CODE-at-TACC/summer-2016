@@ -6,7 +6,7 @@ Some soldering may be required. Follow this instructional video to put together 
 
 ### Nuts and Bolts
 
-TL;DR - [How to solder](https://www.youtube.com/watch?v=QKbJxytERvg).
+TL;DR - [How to solder](https://www.youtube.com/watch?v=QKbJxytERvg) and other considerations when building your robot.
 
 _*Soldering*_
 
@@ -17,10 +17,6 @@ It's not that bad, really. Here are some tips:
 - Learn to clean and tin your tip. This maintains the heat conductivity of the tip.
 - If you are soldering headers onto a board, you can use a breadboard or other components to actually hold everything in place, in the way that a jig holds.pieces of wood you are trying to join
 - Practice.
-
-_*Screws*_
-
-Most components use the metric system for screws. In this case, many of the components use M4 screws - 4mm screws. Locking nuts help immensely to make sure the robot stays together.
 
 _*Chassis Kits*_
 
