@@ -4,6 +4,11 @@ Some soldering may be required. Follow this instructional video to put together 
 
 ** TODO: YouTube on assembling kit **
 
+_*Try this:*_
+
+- Disconnect power from the USB battery pack. Try reversing the connections on each pair of wires connecting the motors. What happens?
+- Which way is "correct"?
+
 ### Nuts and Bolts
 
 TL;DR - [How to solder](https://www.youtube.com/watch?v=QKbJxytERvg) and other considerations when building your robot.

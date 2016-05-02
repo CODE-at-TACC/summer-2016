@@ -13,5 +13,5 @@
 ### This Section
 
 - [Assembling Your Robotics Kit](./ASSEMBLY.md)
-- [Components](./COMPONENTS.md)
+- [Robotic Systems](./COMPONENTS.md)
 - [Programming Your Robot](./programming)

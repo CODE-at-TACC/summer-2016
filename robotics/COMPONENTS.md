@@ -1,8 +1,25 @@
 # Components
 
-Your robot consists of several major components. You can watch the video on them, or read the text for more details.
+Your robot consists of several major systems that might have several parts belonging to the same system. 
 
-* TODO: YouTube on components of a robot *
+_*Try This:*_
+
+Try to identify the part or parts of a robot that might make up the robotics systems listed below. It's okay if you don't know what a system is - try to come up with a definition for it and make your best effort.
+
+- Chassis
+- Drive Train
+- Drive Control
+- Logic System
+- Power System
+
+_*Some Questions:*_
+
+- What definitions did you use to make your selections? 
+- What do you think these systems might do? 
+- What prior knowledge did you have that helped you decide which system a part belonged to? 
+- What might have made a part difficult to classify?
+
+* TODO: YouTube on systems of a robot *
 
 _*Chassis*_
 

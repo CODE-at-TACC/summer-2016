@@ -1,21 +1,15 @@
-### ```loop```
+### ```setup```
 
 ** TODO: YouTube demonstration **
 
-In Build, search for the ```codetacc-robotics``` library, then click "Use This Example." This makes a copy of the example for you that you may modify and flash to your robot. In your code, you will find a section called ```loop``` that is bounded by curly braces: 
+We're going to modify the program you worked on last time. Find where it says:
 
 ```c
-void loop() {
+void setup() {
 // some stuff
 }
 ```
 Try modifying the lines within the curly braces to make your robot do something different. Make one modification at a time. Verify the code and then flash it before moving on. If you are pair-programming, change partners between each modification.
-
-_*Some Questions:*_
-
-- What types of modifications did you try?
-- Were any of your modifications "unsuccessful"? If so, how did you correct them?
-- What were the effects of your modifications?
 
 ### Nuts and Bolts
 
