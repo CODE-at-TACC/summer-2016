@@ -8,8 +8,9 @@ Your robot's logic board is controlled with _firmware_. It's like software, but 
 
 - [```loop```](./LOOP.md)
 - [Adding New Functions](./FUNCTIONS.md)
-- [Exposing Variables and Functions](./EXPOSING.md)
-- [```setup```](./SETUP.md)
+- [Exposing Functions](./EXPOSING.md)
+- [Football Time!](./FOOTBALL.md)
+- [Reading Sensors](./SENSORS.md)
 - [Variables](./VARIABLES.md)
 - [Reading Sensors]
 
