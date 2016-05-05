@@ -19,11 +19,17 @@ _*Some Questions:*_
 
 ### Nuts and Bolts
 
-TL;DR - The ```loop``` function isn't a true loop, but that's okay. Students learn how to call a function and alter a parameter by modifying what they see and experimenting. It's a good way for students to learn. 
+TL;DR - The ```loop``` function isn't a true loop, but that's okay. Also, students learn how to call a function and alter a parameter by modifying what they see and experimenting. It's a good way for students to learn. 
 
 _```loop``` Isn't Really a Loop!_
 
+In "sketch" style programming frameworks like [Processing](https://processing.org/), there is typically a ```setup``` function and a ```loop``` function that runs continuously. Typically, firmware programmers avoid using traditional ```while``` loops into their code. This has two and a half purposes. 
 
+The first is that the ```setup```/```loop``` structure is easy for novice programmers to understand those paradigms without having to write complex syntax.
+
+The second reason is for stability. Field deployed hardware typically can't receive software updates. In traditional ```while``` loop syntax, it's surprisingly easy to write an infinite loop. In fact, the [Jet Propulsion Laboratory Coding Standards](http://lars-lab.jpl.nasa.gov/JPL_Coding_Standard_C.pdf) for flight control systems prohibits loops that are not _predictably finite_ (guaranteed to end). In otherwords, no ```while``` loops. You don't want to risk having a space probe or a launch vehicle with an infinite loop, do you?
+
+The second-and-a-half reason it related to reason number two. Many firmwares are built with background code running that you are not privy to. There may be [watchdog timers](https://en.wikipedia.org/wiki/Watchdog_timer) and other mechanisms that are silently added to your code when you compile it. In the case of Particle.io, all of the cloud functions are automatically added to your project firmware, and they require the ```loop``` to finish doing its business in a reasonably short amount of time. For that reason, if you write an actual ```while``` loop, you risk crashing the firmware.
 
 _*Functions and Parameters*_
 
