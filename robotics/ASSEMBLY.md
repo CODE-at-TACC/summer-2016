@@ -32,3 +32,7 @@ There are many chassis kits out there, and there are even [aluminum chassis syte
 _*Firmware*_
 
 Throughout this robotics curriculum, we will use the ```codetacc-robotics``` library. It includes an example program that will get the robot "up and running". Consider it the "Hello World" of robotics -- it allows the students to see that every system and every part of their toolchain works.
+
+_*Which way is the "right" way to hook up the motors?*_
+
+Reversing the polarity on the motor connections will reverse the motor direction. Who is to say which way is correct? Well... one could argue that if you look at the firmware, there is an _intended_ way for the robot to be compatible with the code as its written. Reversing the motor polarity would require altering the firmware to function as originally intended.
