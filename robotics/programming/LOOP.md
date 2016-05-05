@@ -2,7 +2,7 @@
 
 ** TODO: YouTube demonstration **
 
-In Build, search for the ```codetacc-robotics``` library, then click "Use This Example." This makes a copy of the example for you that you may modify and flash to your robot. In your code, you will find a section called ```loop``` that is bounded by curly braces: 
+We're going to start modifying your firmware. In your code, you will find a section called ```loop``` that is bounded by curly braces: 
 
 ```c
 void loop() {
@@ -13,13 +13,17 @@ Try modifying the lines within the curly braces to make your robot do something 
 
 _*Some Questions:*_
 
-- What types of modifications did you try?
+- What types of modifications did you try, and how did you do them?
 - Were any of your modifications "unsuccessful"? If so, how did you correct them?
 - What were the effects of your modifications?
 
 ### Nuts and Bolts
 
-TL;DR - Students learn how to call a function and alter a parameter. If they've never seen Java before, there will be no learning interference. If you've never used C++, you may need to read this section.
+TL;DR - The ```loop``` function isn't a true loop, but that's okay. Students learn how to call a function and alter a parameter by modifying what they see and experimenting. It's a good way for students to learn. 
+
+_```loop``` Isn't Really a Loop!_
+
+
 
 _*Functions and Parameters*_
 
@@ -27,44 +31,10 @@ Students will end up seeing that every "command" requires parentheses and a semi
 
 Later on, we will get into the habit of always using curly braces for every flow-control structure. It's a good habit.
 
-_*Object Variables and Pointers to Objects*_
+_*The Copy/Paste Approach*_
 
-** TODO move to next lesson on writing your own methods **
+Many coding curriculum models from the early days of programming ([the dark ages of console programming](https://historysshadow.files.wordpress.com/2014/05/dark-ages.jpg)) have students typing "Hello World" and repeating the actions of their instructor. While there is some value to rote learning, this curriculum takes an exploratory "top-down" approach. The implementation of most the functionality that students will use is abstracted from their view. Along those same lines, the nitty-gritty details of the purpose of each part of a function call isn't explained until the students first see their utility. Nothing is written from scratch.
 
-We're stepping back into the dark ages of C++ here, so a couple of programming notes about the differences between C++ and Java:
+Is it important for a student to be able to create a complex code structure from memory, such as write a function in C++ from scratch? Even professional programmers typically begin work in a new language by modifying pre-existing structures. Consider a professional programmer working with dozens of different languages across their entire career. What does a function definition look like in Python? Ruby? Lua? Or a Javascript AMD loader compatible function that is actually a dictionary class with private, public, instance and prototype scoping? The modern programmer inevitably does some cutting and pasting. Knowing the important parts of a function header are more important than the specific syntax. If we were using an IDE with code generation, the function header would be automatically generated for us.
 
-In Object Oriented Programming, we tend to refer to any function that is not part of a class a "method" regardless of whether or not it returns something. Technically, in C++ a ```void``` function is still a function that returns nothing.
-
-In Java, you may have an object on which you are calling code:
- 
-```motor.run()```
-  
-but in C++ there is a distinction between direct object variables and pointers to objects. Here's an example of a variable of an object.
-  
-  ```c
-Adafruit_MotorShield shield = Adafruit_MotorShield();
-  ```
-
-I can call any of ```shield```'s method directly, such as in:
-
-```c
-shield.begin()
-```
-
-If you have a variable that is a pointer, however, things are a little trickier.
-
-```c
-Adafruit_DCMotor *myMotor = shield.getMotor(`)
-```
-
-The ```*``` means the variable is a pointer. It's like a Java reference, but you can do weird things like manipulate memory. In this case, ```*myMotor``` must be a pointer because it is dynamically created at runtime. To call any methods beloning to ```*myMotor```, you must use a ```->``` operator, such as in:
-
-```myMotor->run(FORWARD)```
-
-_*What is this ```codetacc-robotics``` library, anyway?*_
-
-Particle.io allows for the publishing of community libraries. These are open source projects that can be used by anyone. In order to publish the library, the firmware code must be a library that is hosted on GitHub with some additional items, such as the example project.
-
-The library itself is a modified version of [Adafruit's Motor Shield V2 Library](https://github.com/adafruit/Adafruit_Motor_Shield_V2_Library) that has been changed to be compatible with Particle.io devices and re-arranged to be published as a Particle.io community library.
-
-Students will use this project as a base for all of their work for this curriculum.
+Therefore, at this basic level of making a function call, students are simply testing the boundaries of stimulus and response, which is what all children do anyway.

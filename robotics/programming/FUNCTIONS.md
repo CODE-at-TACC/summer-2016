@@ -51,13 +51,48 @@ You can create a new function by copying the definition for ```forward```, pasti
 
 ### Nuts and Bolts
 
-TL;DR - we could have used a void, but then we would have to change the function header if we wanted to expose the function to the cloud.
-
-_*The Copy/Paste Approach*_
-
-Is it important for a student to be able to write a function in C++ from scratch, as opposed to copying and modifying a pre-existing one? Maybe. But consider a professional programmer working with dozens of different languages across their entire career. What does a function definition look like in Python? Ruby? Lua? Or a Javascript AMD loader compatible function that is actually a dictionary class with private, public, instance and prototype scoping? The modern programmer inevitably does some cutting and pasting. Knowing the important parts of a function header are more important than the specific syntax. If we were using an IDE with code generation, the function header would be automatically generated for us.
+TL;DR - Despite similar "look and feel", there are some important differences between C++ and Java. If you've only worked in Java, you may want to read this.
 
 _*Why not a void?*_
 
 Later on, we will be exposing functions to the cloud using the Particle cloud API. It requires that the function be of type ```int``` with a ```String``` parameter, for receiving any arguments from the web. This means that, with the function header ```int backward(String params = "")```, we can simply expose it to the web with the function call ```Particle.function("backward", backward)``` and it can be called via the web. The argument ```String params = ""``` allows us to make a call to ```backward``` in code with ```backward();```. If no parameter is included in the function call, the default parameter value is an empty String.
 
+_*Object Variables and Pointers to Objects*_
+
+We're stepping back into the dark ages of C++ here, so a couple of programming notes about the differences between C++ and Java:
+
+In Object Oriented Programming, we tend to refer to any function that is not part of a class a "method" regardless of whether or not it returns something. Technically, in C++ a ```void``` function is still a function that returns nothing.
+
+In Java, you may have an object on which you are calling code:
+ 
+```motor.run()```
+  
+but in C++ there is a distinction between direct object variables and pointers to objects. Here's an example of a variable of an object.
+  
+  ```c
+Adafruit_MotorShield shield = Adafruit_MotorShield();
+  ```
+
+I can call any of ```shield```'s method directly, such as in:
+
+```c
+shield.begin()
+```
+
+If you have a variable that is a pointer, however, things are a little trickier.
+
+```c
+Adafruit_DCMotor *myMotor = shield.getMotor(`)
+```
+
+The ```*``` means the variable is a pointer. It's like a Java reference, but you can do weird things like manipulate memory. In this case, ```*myMotor``` must be a pointer because it is dynamically created at runtime. To call any methods beloning to ```*myMotor```, you must use a ```->``` operator, such as in:
+
+```myMotor->run(FORWARD);```
+
+_*What is this ```codetacc-robotics``` library, anyway?*_
+
+Particle.io allows for the publishing of community libraries. These are open source projects that can be used by anyone. In order to publish the library, the firmware code must be a library that is hosted on GitHub with some additional items, such as the example project.
+
+The library constains modified versions of [Adafruit's Motor Shield V2 Library](https://github.com/adafruit/Adafruit_Motor_Shield_V2_Library) and the [Adafruit TMP007 Sensor Library](https://github.com/adafruit/Adafruit_TMP007_Library). They have been changed to be compatible with Particle.io devices and re-arranged to be published as a Particle.io community library.
+
+Students will use this project as a base for all of their work for this curriculum.

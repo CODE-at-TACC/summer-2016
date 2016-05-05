@@ -11,12 +11,12 @@ Your robot's logic board is controlled with _firmware_. It's like software, but 
 - [Exposing Functions](./EXPOSING.md)
 - [Football Time!](./FOOTBALL.md)
 - [Reading Sensors](./SENSORS.md)
-- [Variables](./VARIABLES.md)
-- [Reading Sensors]
+- [Publishing Events](./PUBLISHING.md)
+- [Subscribing to Events](./SUBSCRIBING.md)
 
 ### Nuts and Bolts
 
-TL;DR - How you teach programming is just as important as what you are teaching them to program. Here are some practices we use for CODE @ TACC.
+TL;DR - How you teach programming is just as important as what you are teaching them to program. At CODE @ TACC, we use exploratory learning, pair programming, and we verify all code after every line to reduce syntax errors.
 
 _*Learn By Experimentation*_
 

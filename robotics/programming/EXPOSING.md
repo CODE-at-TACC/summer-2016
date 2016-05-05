@@ -10,6 +10,7 @@ The Particle.io platform is powerful because it allows the firmware on board you
 
 For this lesson, we're going to use [```explorer```](../../particle/explorer). The basic steps for using it are:
 
+- Download this curriculum and navigate to the ```explorer``` directory in your terminal.
 - Start a python web server in the ```explorer``` directory with the terminal command ```python -m SimpleHTTPServer```
 - Browse to your local python server at the address [http://localhost:8000](http://localhost:8000)
 - Login to ```explorer``` with your Particle.io username and password
@@ -64,5 +65,3 @@ _*Access Tokens and Device IDs*_
 _*Calling Functions*_
 
 Calling a function on a device via web that directly controls motors is not necessarily the best way to accomplish things when writing firmware for a custom device. In a typical application, you may have the firmware expose a function that receives data about a requested action, records the request, and then acts upon it later in the loop. The function that is being called will _preempt_ anything executing in the loop. This can lead to conditions where the firmware will behave unpredictably. Therefore, an application with exposed functions will have extremely short exposed functions.
-
-** TODO Test **

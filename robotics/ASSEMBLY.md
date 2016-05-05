@@ -4,6 +4,8 @@ Some soldering may be required. Follow this instructional video to put together 
 
 ** TODO: YouTube on assembling kit **
 
+** TODO: YouTube on logging in to Particle.io and flashing firmware **
+
 _*Try this:*_
 
 - Disconnect power from the USB battery pack. Try reversing the connections on each pair of wires connecting the motors. What happens?
@@ -29,4 +31,4 @@ There are many chassis kits out there, and there are even [aluminum chassis syte
 
 _*Firmware*_
 
-In this introductory lesson, we are using pre-programmed firmware. This is so that the robot is definitely "doing something" when it is built. Later, we will go into programming the robot.
+Throughout this robotics curriculum, we will use the ```codetacc-robotics``` library. It includes an example program that will get the robot "up and running". Consider it the "Hello World" of robotics -- it allows the students to see that every system and every part of their toolchain works.
