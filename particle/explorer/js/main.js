@@ -2,7 +2,8 @@ require.config({
   baseUrl: "js",
   shim : {
         "bootstrap" : { "deps" :['jquery'] },
-        "firebase" : { exports: 'Firebase' }
+        "firebase" : { exports: 'Firebase' },
+        "bootstrapgrowl" : { "deps" : ['jquery'] }
     },
   paths: {
       jquery: "libs/jquery-2.2.0.min",
@@ -15,9 +16,6 @@ require.config({
       bootstrapgrowl : "libs/jquery.bootstrap-growl.min",
       particleexchange: "libs/particleexchange",
       destroyed : "libs/destroyed"
-  },
-  "shim" : {
-      "libs/jquery.bootstrap-growl.min" : ["jquery"]
   },
   packages: [
     {
@@ -55,7 +53,7 @@ require.config({
 
 
 require(['require'], function(require) {
-  require(['jQuery','app'], function($, App) {
+  require(['jquery','app'], function($, App) {
       var a = new App();
   });
 });
