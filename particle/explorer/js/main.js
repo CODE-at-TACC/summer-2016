@@ -55,7 +55,7 @@ require.config({
 
 
 require(['require'], function(require) {
-  require(['app'], function(App) {
+  require(['jQuery','app'], function($, App) {
       var a = new App();
   });
 });
