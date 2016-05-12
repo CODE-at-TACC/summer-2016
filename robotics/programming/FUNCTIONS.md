@@ -2,7 +2,7 @@
 
 ### Introduction
 
-You're going to add your own custom functions to the firmware.
+You're going to add your own custom functions to the firmware. Use the ```1_robot.ino``` example firmware for this lesson.
 
 ** TODO: YouTube Video about adding a function **
 

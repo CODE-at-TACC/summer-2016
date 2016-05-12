@@ -4,27 +4,33 @@
 
 ### Introduction
 
+For this project, use the ```3_publish.ino``` example firmware.
+
 Your Particle.io devices can publish events to the web, which others can subscribe to and "listen" for.
 
 Login to the [Particle.io Dashboard](https://dashboard.particle.io). On the left side of the page, you should see a "logs" icon. Click on that. Now reset your Particle.io robot controller and see what happens. 
 
-What you just saw was your robot publishing an event that it came online. Your robot can also publish custom events. We're going to use custom events to create a motion detector that texts you.
+What you just saw was your robot publishing an event that it came online. Your robot can also publish custom events. 
+
+### ```Particle.publish```
+
+The ```Particle.publish``` function built in to the Particle.io platform allows us to publish custom events. In the ```setup()``` function, look for this line of code:
+
+```
+Particle.publish("hello");
+```
+
+When this line of code is run, you should see that event published in the Dashboard. Try it out, then we're going to use custom events to create a motion detector that texts you.
 
 ### [IFTTT](https://ifttt.com) (If This Then That)
 
-[IFTTT](https://ifttt.com) is a website that can subscribe to (among lots of other things) Particle.io published events and send notifications to (among lots of other things) email. 
+[IFTTT](https://ifttt.com) is a website that can subscribe to (among lots of other things) Particle.io published events and send notifications to (among lots of other things) email. View this video to see how to use IFTTT to listen for a "motion" event.
 
 ** Video: Setting up IFTTT **
 
-### Firmware
+### Testing it out
 
-Publishing an event from your Particle.io device is very easy. Let's have your robot publish the event that IFTTT is listening for. In your ```setup``` function, add this line of code:
-
-```
-Particle.publish("motion");
-```
-
-And that's it! Try it out.
+Sometimes it's important just to try publishing the event manually to see if IFTTT works. Modify the ```Particle.publish``` call in ```setup``` so that it publishes ```"motion"``` instead of ```"hello"``` and see if your IFTTT works.
 
 ### But what about the "if" part?
 

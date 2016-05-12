@@ -8,6 +8,8 @@ The Particle.io platform is powerful because it allows the firmware on board you
 
 ### ```explorer```
 
+** TODO Update explorer link to use hosted explorer **
+
 For this lesson, we're going to use [```explorer```](../../particle/explorer). The basic steps for using it are:
 
 - Download this curriculum and navigate to the ```explorer``` directory in your terminal.
@@ -60,7 +62,7 @@ There's an old Unix tool called ```curl``` which allows you to send a simple web
 
 _*Access Tokens and Device IDs*_
 
-...you'll notice that the above requires your device's numerical ID and an access token from your account. ```explorer``` uses a Javascript library that performs login, token and device management.
+...you'll notice that the above requires your device's numerical ID and an access token from your account. ```explorer``` uses a Javascript library that performs login, token and device management. In addition, it automatically scans the _REST endpoint_ of the robot to see which functions are available. Finally, a second wrapper library used by ```explorer`` prevents multiple calls to the same function before the first call completes. This is not standard functionality of the Particle.io platform.
 
 _*Calling Functions*_
 

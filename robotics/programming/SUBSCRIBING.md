@@ -8,7 +8,7 @@ IFTTT has an app called the DO Button for [Android](https://play.google.com/stor
 
 ### What to actually "do"
 
-First we need a _handler_ for your event. Let's add a simple function that makes your robot drive forward.
+First we need a _handler_ for your event. Look at the custom function that makes your robot drive forward.
 
 ```
 void handler(const char *event, const char *data) {
@@ -22,7 +22,7 @@ This function header looks... a little complicated. That's okay for now. Let's t
 
 ```
 void setup() {
-  // ...all the other stuffs
+  // other stuff...
 
   handler(NULL, NULL);
 }
@@ -36,9 +36,9 @@ Now let's have it run only when a certain event is published. This is called _su
 
 ```
 void setup() {
-  // ...all the other stuffs
-  
-  Particle.subscribe("gogogo", handler);
+  // other stuff...
+
+  Particle.subscribe("gogogo", handler, MY_DEVICES);
 }
 ```
 
@@ -47,6 +47,8 @@ Now your robot will run the code when it receives the event ```gogogo```. But ho
 ### DO Button
 
 Now that you know this works, try setting up the DO Button to publish the ```gogogo``` event. (Hint: Use the Particle channel.)
+
+** TODO: YouTube on setting up DO button **
 
 ### Nuts and Bolts
 

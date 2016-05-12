@@ -13,6 +13,7 @@ Your robot's logic board is controlled with _firmware_. It's like software, but 
 - [Reading Sensors](./SENSORS.md)
 - [Publishing Events](./PUBLISHING.md)
 - [Subscribing to Events](./SUBSCRIBING.md)
+- [State Programming](./STATES.md)
 
 ### Nuts and Bolts
 
