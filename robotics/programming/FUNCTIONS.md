@@ -69,19 +69,19 @@ In Java, you may have an object on which you are calling code:
   
 but in C++ there is a distinction between direct object variables and pointers to objects. Here's an example of a variable of an object.
   
-  ```c
+```
 Adafruit_MotorShield shield = Adafruit_MotorShield();
-  ```
+```
 
 I can call any of ```shield```'s method directly, such as in:
 
-```c
+```
 shield.begin()
 ```
 
 If you have a variable that is a pointer, however, things are a little trickier.
 
-```c
+```
 Adafruit_DCMotor *myMotor = shield.getMotor(`)
 ```
 
