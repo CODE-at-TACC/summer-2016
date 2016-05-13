@@ -89,7 +89,9 @@ Adafruit_DCMotor *myMotor = shield.getMotor()
 
 The ```*``` means the variable is a pointer. It's like a Java reference, but you can do weird things like manipulate memory. In this case, ```*myMotor``` must be a pointer because it is dynamically created at runtime. To call any methods beloning to ```*myMotor```, you must use a ```->``` operator, such as in:
 
-```myMotor->run(FORWARD);```
+```
+myMotor->run(FORWARD);
+```
 
 _*What is this ```codetacc-robotics``` library, anyway?*_
 
