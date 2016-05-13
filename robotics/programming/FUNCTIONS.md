@@ -65,10 +65,12 @@ In Object Oriented Programming, we tend to refer to any function that is not par
 
 In Java, you may have an object on which you are calling code:
  
-```motor.run()```
+```
+motor.run();
+```
   
 but in C++ there is a distinction between direct object variables and pointers to objects. Here's an example of a variable of an object.
-  
+
 ```
 Adafruit_MotorShield shield = Adafruit_MotorShield();
 ```
@@ -82,7 +84,7 @@ shield.begin()
 If you have a variable that is a pointer, however, things are a little trickier.
 
 ```
-Adafruit_DCMotor *myMotor = shield.getMotor(`)
+Adafruit_DCMotor *myMotor = shield.getMotor()
 ```
 
 The ```*``` means the variable is a pointer. It's like a Java reference, but you can do weird things like manipulate memory. In this case, ```*myMotor``` must be a pointer because it is dynamically created at runtime. To call any methods beloning to ```*myMotor```, you must use a ```->``` operator, such as in:
