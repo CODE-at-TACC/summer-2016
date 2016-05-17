@@ -49,7 +49,19 @@ This is the ```waiting``` state. When you _implement_ the logic of the FSM, you 
 
 Well, almost. 
 
-First, look at the section called ```Function prototypes```. It has a list of what looks like function definitions, but they don't have curly braces. The reason is that C++ is a _top-down compiled language_. Basically, you can't refer to a function until it's written. To get around that, we use a _prototype_ - a promise to the C++ compiler that we will, at some point, have a function with a specific name. ("Listen up, C++. We _promise_ that you will have a [puppy named Max](https://i.ytimg.com/vi/Ez2OSSgCMlM/maxresdefault.jpg), when you're old enough to handle the responsibility.") The important part is that you list any states that you will be creating in this section.
+First, look at the section called ```Function prototypes```. It has a list of what looks like function definitions, but they don't have curly braces.
+
+```
+int forward(String);
+int left(String);
+int right(String);
+int stop(String);
+
+void waiting();
+void driving();
+```
+
+The reason is that C++ is a _top-down compiled language_. Basically, you can't refer to a function until it's written. To get around that, we use a _prototype_ - a promise to the C++ compiler that we will, at some point, have a function with a specific name. ("Listen up, C++. We _promise_ that you will have a [puppy named Max](https://i.ytimg.com/vi/Ez2OSSgCMlM/maxresdefault.jpg), when you're old enough to handle the responsibility.") The important part is that you create a prototype for any states that you will be creating in this section.
 
 Next, look at the ```setup()``` function. There's a line that says:
 
