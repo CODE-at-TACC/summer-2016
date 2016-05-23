@@ -12,7 +12,9 @@ This year's curriculum features a robotics unit and wearables. Our primary devel
 
 ### This Curriculum
 
-You may download this curriculum by clicking [this link](https://github.com/CODE-at-TACC/summer-2016/archive/master.zip). The documents in this repository are designed for those who are looking for a "textbook". Therefore, if you're a teacher and you need written activity plans and documentation, this is the place to look. If you're a student participant looking for video demonstrations, here's a link to a YouTube Channel. ** TODO: YouTube channel **
+You may download this curriculum by clicking [this link](https://github.com/CODE-at-TACC/summer-2016/archive/master.zip). The documents in this repository are designed for those who are looking for a "textbook". Therefore, if you're a teacher and you need written activity plans and documentation, this is the place to look. If you're a student participant looking for video demonstrations, here's a link to a YouTube Channel. 
+
+[YouTube: CODE @ TACC Summer 2016](https://www.youtube.com/playlist?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
 
 ### Nuts and Bolts
 

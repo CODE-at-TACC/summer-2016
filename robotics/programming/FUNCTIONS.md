@@ -4,9 +4,9 @@
 
 You're going to add your own custom functions to the firmware. Use the `1_robot.ino` example firmware for this lesson.
 
-** TODO: YouTube Video about adding a function **
+####[YouTube: Functions](https://youtu.be/WyGnx9MCQ8E?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
 
-### What's there already?
+### What's already there?
 
 Inside of your `loop` method, you can see the following code:
 

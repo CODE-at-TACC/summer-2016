@@ -1,6 +1,12 @@
-### `loop`
+### Modifying the Firmware
 
-** TODO: YouTube demonstration **
+### Introduction
+
+You can modify the _firmware_ for your robot by changing its C++ _source code_, _compiling_ the source code into a _fimrware binary_ and then _flashing_ your robot.
+
+####[YouTube: Modifying the Firmware](https://youtu.be/dmktLczVx-c?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
+
+### 'loop'
 
 We're going to start modifying your firmware. In your code, you will find a section called `loop` that is bounded by curly braces: 
 

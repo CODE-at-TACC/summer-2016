@@ -2,9 +2,9 @@
 
 Some soldering may be required. Follow this instructional video to put together your robot and flash it with firmware.
 
-####[YouTube: Assembling Your Robot](https://www.youtube.com/watch?v=aCVczCflXvU)
+####[YouTube: Assembling Your Robot](https://youtu.be/aCVczCflXvU?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
 
-####[YouTube: Flashing Firmware](https://www.youtube.com/watch?v=jQxIPMPA-wM)
+####[YouTube: Flashing Firmware](https://youtu.be/jQxIPMPA-wM?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
 
 _*Try this:*_
 
