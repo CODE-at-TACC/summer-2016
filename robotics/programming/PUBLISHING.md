@@ -4,7 +4,7 @@
 
 ### Introduction
 
-For this project, use the ```3_publish.ino``` example firmware.
+For this project, use the `3_publish.ino` example firmware.
 
 Your Particle.io devices can publish events to the web, which others can subscribe to and "listen" for.
 
@@ -12,9 +12,9 @@ Login to the [Particle.io Dashboard](https://dashboard.particle.io). On the left
 
 What you just saw was your robot publishing an event that it came online. Your robot can also publish custom events. 
 
-### ```Particle.publish```
+### `Particle.publish`
 
-The ```Particle.publish``` function built in to the Particle.io platform allows us to publish custom events. In the ```setup()``` function, look for this line of code:
+The `Particle.publish` function built in to the Particle.io platform allows us to publish custom events. In the `setup()` function, look for this line of code:
 
 ```
 Particle.publish("hello");
@@ -26,7 +26,7 @@ When this line of code is run, you should see that event published in the Dashbo
 
 [IFTTT](https://ifttt.com) is a website that can subscribe to (among lots of other things) Particle.io published events and send notifications to (among lots of other things) email. View this video to see how to use IFTTT to listen for a "motion" event.
 
-** Video: Setting up IFTTT **
+** TODO: Video: Setting up IFTTT **
 
 ### Testing it out
 

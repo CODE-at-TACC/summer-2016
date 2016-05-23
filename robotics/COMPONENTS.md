@@ -19,7 +19,7 @@ _*Some Questions:*_
 - What prior knowledge did you have that helped you decide which system a part belonged to? 
 - What might have made a part difficult to classify?
 
-* TODO: YouTube on systems of a robot *
+[YouTube: Components and Systems](https://www.youtube.com/watch?v=ahPsGrApbpg)
 
 _*Chassis*_
 

@@ -2,9 +2,9 @@
 
 Some soldering may be required. Follow this instructional video to put together your robot and flash it with firmware.
 
-** TODO: YouTube on assembling kit **
+####[YouTube: Assembling Your Robot](https://www.youtube.com/watch?v=aCVczCflXvU)
 
-** TODO: YouTube on logging in to Particle.io and flashing firmware **
+####[YouTube: Flashing Firmware](https://www.youtube.com/watch?v=jQxIPMPA-wM)
 
 _*Try this:*_
 
@@ -36,3 +36,11 @@ Throughout this robotics curriculum, we will use the ```codetacc-robotics``` lib
 _*Which way is the "right" way to hook up the motors?*_
 
 Reversing the polarity on the motor connections will reverse the motor direction. Who is to say which way is correct? Well... one could argue that if you look at the firmware, there is an _intended_ way for the robot to be compatible with the code as its written. Reversing the motor polarity would require altering the firmware to function as originally intended.
+
+_*What is this `codetacc-robotics` library, anyway?*_
+
+Particle.io allows for the publishing of community libraries. These are open source projects that can be used by anyone. In order to publish the library, the firmware code must be a library that is hosted on GitHub with some additional items, such as the example project.
+
+The library constains modified versions of [Adafruit's Motor Shield V2 Library](https://github.com/adafruit/Adafruit_Motor_Shield_V2_Library) and the [Adafruit TMP007 Sensor Library](https://github.com/adafruit/Adafruit_TMP007_Library). They have been changed to be compatible with Particle.io devices and re-arranged to be published as a Particle.io community library.
+
+Students will use this project as a base for all of their work for this curriculum.

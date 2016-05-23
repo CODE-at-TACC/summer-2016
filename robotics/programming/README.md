@@ -6,7 +6,7 @@ Your robot's logic board is controlled with _firmware_. It's like software, but 
 
 ### In This Section
 
-- [```loop```](./LOOP.md)
+- [`loop`](./LOOP.md)
 - [Adding New Functions](./FUNCTIONS.md)
 - [Exposing Functions](./EXPOSING.md)
 - [Football Time!](./FOOTBALL.md)

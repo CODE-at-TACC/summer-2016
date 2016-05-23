@@ -14,3 +14,4 @@ Here's some [sample source code](./test_firmware/firmware/firmware.ino) for a si
 
 - [Setup](./SETUP.md)
 - [How it Works](./HOW.md)
+- [Software Tools](./TOOLS.md)

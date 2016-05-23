@@ -4,9 +4,7 @@
 
 The Particle.io Photon requires WiFi. More importantly, it requires an unfiltered connection to spark.particle.io on port 5683 and it doesn't support WPA2 Enterprise Wifi. For this curriculum, you can use the [Build IDE](http://build.particle.io) to code and the [Dashboard](http://dashboard.particle.io) to monitor your devices. Optionally, you may wish to install [Node.js](http://node.js.org) and the [Particle CLI](https://docs.particle.io/guide/tools-and-features/cli/photon/).
 
-** TODO YouTube on setting up particle cli **
-
-** TODO YouTube on configuring a photon via CLI **
+####[YouTube: Particle CLI and Setup](https://www.youtube.com/watch?v=JuAFk4Z3A8U)
 
 ### Claiming Your Device
 

@@ -4,15 +4,18 @@ _*[Build IDE](http://build.particle.io)*_
 
 The Build IDE provides a convenient way to write code and access libraries for Particle.io. If you have experience with Arduino, it's very similar to that.
 
-** TODO: YouTube - Build IDE **
-
 _*[Dashboard](http://dashboard.particle.io)*_
 
-The Particle.io Dashboard allows you to view live events, running devices and web integrations for your device.
+The Particle.io Dashboard allows you to view live events being published by your devices.
 
-_*[`explorer`](./explorer)*_
+_*[`explorer`](http://code.tacc.utexas.edu/particle-explorer)*_
 
-The `explorer` webpage is a client that can read the state of Particle.io device variables and trigger device functions. It must be hosted on a web server to use. If you have [python](http://www.python.org), you may launch a simple web server for the `explorer` page from a terminal by typing `python -m SimpleHTTPServer` in the `explorer` directory. Then simply browse to [http://localhost:8000](http://localhost:8000).
+The `explorer` web app allows you to conveniently access Particle.io cloud functions. Specifically, you can read device variables, call device functions and publish cloud events.
+
+_*[`mass-flasher`](http://code.tacc.utexas.edu/particle-mass-flash)*_
+
+The `mass-flash` web app allows you to flash multiple devices with the same firmware at once. If you have a dozen devices that are physically identical and all need the same firmware, you can use this tool to flash the devices quickly.
+
 
 ### Nuts and Bolts
 
@@ -39,4 +42,4 @@ A workflow that I use with my students:
 
 _Particle Cloud API_
 
-There are other ways of interacting with the Particle Cloud API. For example, [```explorer```](./explorer) is built using the [Javascript Software Development Kit](https://docs.particle.io/reference/javascript/). There are other development kits for [iOS](https://docs.particle.io/reference/ios/) and [Android](https://docs.particle.io/reference/android/) if you wish to develop apps that can interact with your Photon. However, all three are simply designed to provide a neatly packaged way to interact with Particle.io's [REST Cloud API](https://docs.particle.io/reference/api/).
+There are other ways of interacting with the Particle Cloud API. For example, [`explorer`](http://code.tacc.utexas.edu/particle-explorer) and [`mass-flash`](http://code.tacc.utexas.edu/particle-mass-flash) are built using the [Javascript Software Development Kit](https://docs.particle.io/reference/javascript/). There are other development kits for [iOS](https://docs.particle.io/reference/ios/) and [Android](https://docs.particle.io/reference/android/) if you wish to develop apps that can interact with your Photon. However, all three are simply designed to provide a neatly packaged way to interact with Particle.io's [REST Cloud API](https://docs.particle.io/reference/api/).
