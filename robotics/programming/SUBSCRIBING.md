@@ -2,9 +2,9 @@
 
 ### The DO Button
 
-IFTTT has an app called the DO Button for [Android](https://play.google.com/store/apps/details?id=com.ifttt.dobutton) and [iOS](https://itunes.apple.com/us/app/do-button-by-ifttt/id905998610). We're going to use it to publish an event that you can listen for.
+IFTTT has an app called the DO Button for [Android](https://play.google.com/store/apps/details?id=com.ifttt.dobutton) and [iOS](https://itunes.apple.com/us/app/do-button-by-ifttt/id905998610). We're going to use it to publish an event that you can subscribe to.
 
-** YouTube DO Button **
+####[YouTube: DO Button Handler](https://youtu.be/BEjuTmyvvRI?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
 
 ### What to actually "do"
 
@@ -18,7 +18,7 @@ void handler(const char *event, const char *data) {
 }
 ```
 
-This function header looks... a little complicated. That's okay for now. Let's test it out by adding it to the ```setup``` function.
+This function header looks... a little complicated. That's okay for now. Let's test it out by adding it to the `setup` function.
 
 ```
 void setup() {
@@ -32,7 +32,7 @@ Test it to make sure it actually runs.
 
 ### Subscribing to an event
 
-Now let's have it run only when a certain event is published. This is called _subscribing_ to the event. Replace your call to the ```handler``` function in ```setup``` with the following code:
+Now let's have it run only when a certain event is published. This is called _subscribing_ to the event. Replace your call to the `handler` function in `setup` with the following code:
 
 ```
 void setup() {
@@ -42,17 +42,11 @@ void setup() {
 }
 ```
 
-Now your robot will run the code when it receives the event ```gogogo```. But how do we publish this event? Try using [```explorer```](../../particle/explorer) to publish the event.
-
-### DO Button
-
-Now that you know this works, try setting up the DO Button to publish the ```gogogo``` event. (Hint: Use the Particle channel.)
-
-** TODO: YouTube on setting up DO button **
+Now your robot will run the code when it receives the event `gogogo`. But how do we publish this event? Try using [`explorer`](http://code.tacc.utexas.edu/particle-explorer) to publish the event, or create a DO Button using the DO Button mobile app. (Hint: Use the Particle channel.)
 
 ### Nuts and Bolts
 
-TL;DR - Event handlers use old school char arrays instead of the ```String``` class that Particle.io provides.
+TL;DR - Event handlers use old school char arrays instead of the `String` class that Particle.io provides.
 
 _const char *pointer_
 
@@ -100,7 +94,7 @@ This is much more readable than the native C++ version:
 ```
 void handler(const char *event, const char *data) {
   const char *puppy = "puppy";
-  if (stncmp(data, puppy, strlen(puppy)) {
+  if (strncmp(data, puppy, strlen(puppy)) {
     // You got a puppy.
   }
 }

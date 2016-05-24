@@ -38,7 +38,7 @@ When this line of code is run, you should see that event published in the Dashbo
 
 ### Testing it out
 
-Sometimes it's important just to try publishing the event manually to see if IFTTT works. Modify the ```Particle.publish``` call in ```setup``` so that it publishes ```"motion"``` instead of ```"hello"``` and see if your IFTTT works.
+Sometimes it's important just to try publishing the event manually to see if IFTTT works. Modify the `Particle.publish` call in `setup` so that it publishes `"motion"` instead of `"hello"` and see if your IFTTT works.
 
 ### But what about the "if" part?
 
@@ -58,7 +58,7 @@ void loop() {
 }
 ```
 
-The structure that you see is an ```if``` statement. It allows your robot to make a decision, based on whether or not the temperature is greater than 100 degrees Celsius.
+The structure that you see is an `if` statement. It allows your robot to make a decision, based on whether or not the temperature is greater than 100 degrees Celsius.
 
 This is probably wrong. 100 degrees Celsius is the temperature of boiling water...
 
@@ -83,4 +83,4 @@ It is possible to register a [Webhook](https://docs.particle.io/guide/tools-and-
 
 _Event Rate Limiting_
 
-Event publishing is limited to 60 events every 2 minutes. This doesn't mean that the events are limited to once every 2 seconds - you could, in theory, publish 60 events in the first 10 seconds and then Particle.io would reject events for the next 110 seconds. That's why it's advisable to put a delay in the ```loop``` function when publishing.
+Event publishing is limited to 60 events every 2 minutes. This doesn't mean that the events are limited to once every 2 seconds - you could, in theory, publish 60 events in the first 10 seconds and then Particle.io would reject events for the next 110 seconds. That's why it's advisable to put a delay in the `loop` function when publishing.
