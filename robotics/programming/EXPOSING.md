@@ -4,7 +4,7 @@
 
 The Particle.io platform is powerful because it allows the firmware on board your robot to expose data and functions to the Internet. This means that you can control your robot via the web!
 
-** TODO YouTube video on exposing a function and using explorer **
+####[YouTube: Exposing Functions](https://youtu.be/j1J5oLPaQ1I?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
 
 ### [`explorer`](http://code.tacc.utexas.edu/particle-explorer)
 

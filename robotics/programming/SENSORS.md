@@ -4,7 +4,9 @@
 
 Sensors are how a robot receives input from the world around it. There are many types of sensors. In this kit, you will be working with two types of sensors: Thermopile and Ultrasonic. The Thermopile IR sensor senses infrared radiation from a heat source. The Ultrasonic sensor is a sonar-like range finder.
 
-** TODO YouTube on Sensors, how to connect **
+####[YouTube: Wiring a Sensor](https://youtu.be/D07oKCR-klo?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
+
+####[YouTube: Reading a Sensor](https://youtu.be/gwYqrcRRvNQ?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
 
 ### Sensor Interfaces
 
