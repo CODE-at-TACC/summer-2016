@@ -1,8 +1,16 @@
 # Publishing Events
 
-** YouTube Dashboard **
 
 ### Introduction
+
+You're going to create a motion detector using the sensor and _published events_. We can use a web integration to carry this event 
+
+####[YouTube: Publishing Events](https://youtu.be/j-P8RYhwk3c?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
+
+####[YouTube: Creating an IFTTT Recipe](https://youtu.be/jvPUKNYHOAo?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
+
+
+### App setup
 
 For this project, use the `3_publish.ino` example firmware.
 
