@@ -57,15 +57,21 @@ _*Why not a void?*_
 
 Later on, we will be exposing functions to the cloud using the Particle cloud API. It requires that the function be of type `int` with a `String` parameter, for receiving any arguments from the web. This means that, with the function header:
 
-```int backward(String params = "")```
+```
+int backward(String params = "")
+```
 
 we can simply expose the `backward` function to the web with this line of code in `setup`:
 
-```Particle.function("backward", backward);``` 
+```
+Particle.function("backward", backward);
+``` 
 
 ...and `backward` can now be called directly from the web. This will be demonstrated in the next lesson. The argument `String params = ""` allows us to make a call to `backward` in code without using any parameters: 
 
-```backward();```
+```
+backward();
+```
 
  If no parameter is included in the function call, the default parameter value is an empty String.
 
