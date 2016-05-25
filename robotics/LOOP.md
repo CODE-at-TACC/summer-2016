@@ -2,7 +2,7 @@
 
 ### Introduction
 
-You can modify the _firmware_ for your robot by changing its C++ _source code_, _compiling_ the source code into a _fimrware binary_ and then _flashing_ your robot.
+Your robot's logic board is controlled with _firmware_. It's like software, but designed to control the hardware of your robot. Since it's in between soft and hard, it is firm. [Get it](http://i0.kym-cdn.com/entries/icons/original/000/014/959/Screenshot_116.png)? You can modify the _firmware_ for your robot by changing its C++ _source code_, _compiling_ the source code into a _fimrware binary_ and then _flashing_ your robot.
 
 ####[YouTube: Modifying the Firmware](https://youtu.be/dmktLczVx-c?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
 

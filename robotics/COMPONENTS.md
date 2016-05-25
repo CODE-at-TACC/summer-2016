@@ -1,6 +1,12 @@
-# Components
+# Robotic Systems
 
-Your robot consists of several major systems that might have several parts belonging to the same system. 
+[What's a Robot?](https://www.youtube.com/watch?v=6iJu9-8pjcQ) You could spend a lot of time discussing what is and isn't a [robot](https://xkcd.com/413/). Look at [this set of images](https://docs.google.com/presentation/d/1H6N3CCsyfkCy1GJbW_ZONWBHHcJF0fvD8DCrQ04cSak/edit?usp=sharing) and decide for yourself - what are qualities that a robot must possess?
+
+- Mechanical?
+- Programmable?
+- Autonomous?
+- Accomplishes a task?
+- Interacts with its environment?
 
 _*Try This:*_
 

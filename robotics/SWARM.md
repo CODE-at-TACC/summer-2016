@@ -33,7 +33,7 @@ Swarms are typically not taught in schools because the field of study is very ne
 
 _*Mass Flash*_
 
-The Particle.io Mass Flash tool was written specifically to address the need to flash one firmware to multiple Particle.io devices in a swarm robotics application. Each device may be tied to a different account, and you only need to record the device IDs and access tokens from each account in a .json to configure the flasher. The Build IDE provides the ability to download a ```firmware.bin``` file, which you can then deploy the every device listed in the .json file using this tool.
+The [Particle.io Mass Flasher](http://code.tacc.utexas.edu/particle-mass-flash) tool was written specifically to address the need to flash one firmware to multiple Particle.io devices in a swarm robotics application. Each device may be tied to a different account, and you only need to record the device IDs and access tokens from each account in a .json to configure the flasher. The Build IDE provides the ability to download a `firmware.bin` file, which you can then deploy the every device listed in the .json file using this tool.
 
 _*Swarm Programming Methods*_
 

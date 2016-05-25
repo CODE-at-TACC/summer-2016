@@ -16,7 +16,7 @@ If you need to do any serious debugging of your Particle.io Photon, you will als
 
 ### Project Hardware
 
-We try to source our materials from [Adafruit](https://www.adafruit.com/) and [SparkFun](https://www.sparkfun.com/). You may use the wishlists provided in each section for direct purchasing, or you may look at individual details if you want to pick and choose which components of each project you will implement. The entire curriculum is designed to be modular.
+We try to source our materials from [Adafruit](https://www.adafruit.com/) and [SparkFun](https://www.sparkfun.com/). You may use the wishlists provided in each section for direct purchasing, or you may look at individual details if you want to pick and choose which components of each project you will implement. 
 
 - [Robotics Materials](./ROBOTICS.md)
 - [Wearables Materials](./WEARABLES.md)

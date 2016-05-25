@@ -44,6 +44,10 @@ void setup() {
 
 Now your robot will run the code when it receives the event `gogogo`. But how do we publish this event? Try using [`explorer`](http://code.tacc.utexas.edu/particle-explorer) to publish the event, or create a DO Button using the DO Button mobile app. (Hint: Use the Particle channel.)
 
+### Try This
+
+Using the motion detector code from your last project, add functionality that allows your motion detector to be armed or disarmed via your phone app.
+
 ### Nuts and Bolts
 
 TL;DR - Event handlers use old school char arrays instead of the `String` class that Particle.io provides.
