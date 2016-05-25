@@ -89,7 +89,14 @@ This is what causes the state machine to run. You shouldn't need to modify this.
 
 ### Heat Seeker!
 
-You're going to program your robot to avoid walls and look for a heat source. When it has found the heat source, it should publish an event. The first task will be to create an FSM diagram. Act out the diagram to make sure that your logic works. Once you do that, you can code your program to go find a heat source. Remember - it can't bump into walls!
+You're going to program your robot to avoid walls and look for a heat source. When it has found the heat source, it should publish an event. 
+
+- Create an FSM diagram to plan out the behavior of the robot
+- Act out the diagram to make sure that your logic works
+- Test your heat sensor using exposed variables. You may be surprised by what you find!
+- Code your program to go find a heat source. 
+
+Remember - it can't bump into walls!
 
 ### Nuts and Bolts
 
@@ -100,6 +107,8 @@ _Seeking Heat_
 Acting out the FSM is critical to student success. It allows the students to quickly determine if their FSM works as intended. Coding a poorly written FSM is time consuming, and correcting the code because the logic wasn't correct in the first place is not an efficient use of time.
 
 The Thermopile sensor functions by sensing infrared radiation, but what it reads as "heat" in degrees Celsius is extremely dependent on distance from a heat source. In addition, the value returned by `readObjTempC` will vary immensely based on your heat source. Therefore, it may be helpful to compare it with the result of `readDieTempC`, which will return the temperature of the sensor itself. It's a good "reference" temperature. If `readObjTempC` is signficantly greater than `readDieTempC`, the Thermopile sensor is looking at the heat source.
+
+The thermopile sensor may behave strangely, depending on your heat source. For example, our space heater is a convection heater with a fan. Once the hot air starts warming the thermopile sensor, it no longer reads correctly. That's why it's important to hae your students test out different operating conditions for the sensor. What the temperature reads and reports may not be what's happening in real life!
  
 Finally, you may wish to have the students try saving the "maximum" heat difference sensed in an additional variable. That way it can identify the hottest heat signature that it found.
 
