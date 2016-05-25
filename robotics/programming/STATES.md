@@ -4,7 +4,9 @@
 
 There are many ways of programming a robot to accomplish a task on its own. Sometimes, we refer to machines that can make decisions on their own as having "artificial intelligence."  Artificial intelligence takes on many forms. It doesn't necessarily mean that a machine is capable of [extremely complex decision making](http://vignette2.wikia.nocookie.net/pixar/images/c/ce/Wall-E_Cubecolors.jpg/revision/latest?cb=20090615011459). We're going to explore one way of setting up an artificial intelligence. It's called a [state machine](https://en.wikipedia.org/wiki/Finite-state_machine).
 
-** TODO: YouTube on state machine **
+####[YouTube: Finite State Machines](https://youtu.be/nFOjkE7S404?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
+
+####[YouTube: Implementing Finite State Machines](https://youtu.be/pxaIyNbcPrA?list=PL6EGewlWkUIBzgkgeVXeXmx9rVw0wkJYB)
 
 
 ### Finite State Machines
