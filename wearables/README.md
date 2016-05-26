@@ -11,9 +11,8 @@ This curriculum will cover:
 - Designing a basic circuit
 - Modifying example code 
 
-** TODO: YouTube playlist of CODE @ TACC Summer 2016 Wearables **
-
 ### This Section
 
 - [Wearable Devices](./WEARABLES.md)
+- [Schematics](./SCHEMATICS.md)
 - [Development Boards and GPIO pins](./DEVBOARDS.md)
