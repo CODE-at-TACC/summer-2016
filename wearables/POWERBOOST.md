@@ -14,3 +14,6 @@ We will be using a power module called the PowerBoost 500C. It allows you to con
 
 ### Schematics
 
+![Powerboost Schematic](./images/powerboost-schem.png)
+
+This is a schematic
