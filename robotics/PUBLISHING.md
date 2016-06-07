@@ -34,8 +34,6 @@ When this line of code is run, you should see that event published in the Dashbo
 
 [IFTTT](https://ifttt.com) is a website that can subscribe to (among lots of other things) Particle.io published events and send notifications to (among lots of other things) email. View this video to see how to use IFTTT to listen for a "motion" event.
 
-** TODO: Video: Setting up IFTTT **
-
 ### Testing it out
 
 Sometimes it's important just to try publishing the event manually to see if IFTTT works. Modify the `Particle.publish` call in `setup` so that it publishes `"motion"` instead of `"hello"` and see if your IFTTT works.
