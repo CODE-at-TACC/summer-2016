@@ -87,16 +87,12 @@ void loop() {
 
 This is what causes the state machine to run. You shouldn't need to modify this. It simply means that your firmware will execute the currently assigned state.
 
-### Heat Seeker!
+### Try This!
 
-You're going to program your robot to avoid walls and look for a heat source. When it has found the heat source, it should publish an event. 
+You're going to make a robot that drives around without ever hitting a wall.
 
-- Create an FSM diagram to plan out the behavior of the robot
-- Act out the diagram to make sure that your logic works
-- Test your heat sensor using exposed variables. You may be surprised by what you find!
-- Code your program to go find a heat source. 
-
-Remember - it can't bump into walls!
+- Modify the FSM diagram so that instead of returning to the "waiting" state when the robot is obstructed, it starts spinning and returns to "driving" when no longer obstructed.
+- Modify `5_states.ino` so that it does what you have diagramed.
 
 ### Nuts and Bolts
 

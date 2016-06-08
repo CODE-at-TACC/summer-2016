@@ -24,6 +24,7 @@ This curriculum will cover:
 - [Publishing Events](./PUBLISHING.md)
 - [Subscribing to Events](./SUBSCRIBING.md)
 - [State Programming](./STATES.md)
+- [Servos](./SERVOS.md)
 - [Swarm Robotics](./SWARM.md)
 
 ### Nuts and Bolts
