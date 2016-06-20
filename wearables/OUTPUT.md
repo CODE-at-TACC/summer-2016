@@ -33,7 +33,7 @@ Notice the three lines that get smaller and look like a triangle at the bottom o
 - Set the pin modes of each of the output device pins to OUTPUT
 - Try controlling the LED with [`analogWrite`](https://docs.particle.io/reference/firmware/photon/#analogwrite-pwm-)
 - Try controlling the Vibe motor with [`analogWrite`](https://docs.particle.io/reference/firmware/photon/#analogwrite-pwm-)
-- Try controlling the with [`tone`](https://docs.particle.io/reference/firmware/photon/#tone-)
+- Try controlling the Buzzer with [`tone`](https://docs.particle.io/reference/firmware/photon/#tone-)
 
 ### Adafruit NeoPixel
 
